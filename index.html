@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>grid</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-3">
+        <p id="clickDetail">selectati un rand din lista</p>
+        <button id="button1">ultima</button><br>
+      </div>
+      <div class="col-9" id="main"></div>
+    </div>
+  </div>
+  
+  <script src="./js/jquery-3.7.1.min.js"></script>
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./data.js"></script>
+    <script type="module">
+    
+    import {Grid, selectRow} from './grid.js';
+  
+    let whereDiv = document.getElementById('main');
+    whereDiv.appendChild(Grid(unJson, 'id_pozitie', ''));
+
+    $(document).ready(function(){
+      $('#grid').on('click', function(){
+        $('#clickDetail').text($('#grid').attr('key'));
+      });
+      $('#button1').on('click', function(){
+        selectRow('24d71610-3f89-4999-e6ae-ddc6dca631a6');
+        $('#clickDetail').text($('#grid').attr('key'));
+      })
+
+    });
+
+
+  </script>
+</body>
+</html>
