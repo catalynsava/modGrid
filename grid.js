@@ -111,7 +111,6 @@ function populateGrid(pJson, pKey){
     row.push(document.createElement('tr'));
     //                   ------------------
     
-    
     Object.keys(element).forEach(field=>{
       let cell = document.createElement('td');
       if (field.substring(0, 2) === 'id') {
